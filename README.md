@@ -8,3 +8,7 @@ Attempts to shut down the remote host when given the additional "shutdown" comma
 [check_last_file_modify.vbs](check_last_file_modify.vbs) Checks when a file was last modified
 
 [noaccfiles.ps1](noaccfiles.ps1) PowerShell script that outputs files not accessed or modified in a certain number days. Used in KB 454 "How can I list files that weren't modified in the last X days?" [KB-454](https://www.eventsentry.com/kb/454)
+
+[block_utilman1.cmd](block_utilman1.cmd)  Windows bath script to perform a number of tasks to alleviate the threat: Block access to the file (this includes delete, rename, and execution); Change the user password; Turn off the computer. Script used for "Detecting and automatically recovering from bypassing Windows logons with utilman.exe" link [KB-433](https://www.eventsentry.com/kb/433)
+
+
