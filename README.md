@@ -7,3 +7,4 @@ Attempts to shut down the remote host when given the additional "shutdown" comma
 
 [check_last_file_modify.vbs](check_last_file_modify.vbs) Checks when a file was last modified
 
+[noaccfiles.ps1](noaccfiles.ps1) PowerShell script that outputs files not accessed or modified in a certain number days. Used in KB 454 "How can I list files that weren't modified in the last X days?" [KB-454](https://www.eventsentry.com/kb/454)
