@@ -1,8 +1,29 @@
 @Echo off
 :: EventSentry Validation Script to search LOG4J Vulnerable libraries in all local hard drives.
-ECHO Process started at %date%-%time%
-ECHO Vulnerable Log4J Libraries Found (if any):
-for /F "skip=1" %%C in ('%SystemRoot%\System32\wbem\wmic logicaldisk where drivetype^=3 get caption') do for /F %%D in ("%%C") do PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "gci %%D\ -rec -force -include log4j*.jar -ea 0 | foreach {select-string "JndiLookup.class" $_} | select -exp Path" | %SystemRoot%\System32\findstr.exe log4
-ECHO Process finished at %date%-%time%
-IF %ERRORLEVEL% == 0 EXIT /B 1
-IF %ERRORLEVEL% == 1 EXIT /B 0
+SET _exitcode=0
+ECHO. >%temp%\es_log4jerr.log 2>NUL
+ECHO. >%temp%\es_vul_log4.log 2>NUL
+ECHO LOG4J Vulnerable Libraries Scanner.
+for /F "skip=1" %%C in ('%SystemRoot%\System32\wbem\wmic logicaldisk where drivetype^=3 get caption ^|findstr /r /v "^$"') do (
+	ECHO Processing Drive [%%C] Started at %TIME%
+	for /F %%D in ("%%C") do PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "gci %%D\ -rec -include log4j*.jar -ea 0 | foreach {select-string "JndiLookup.class" $_} | select -exp Path" 2>>%temp%\es_log4jerr.log | %SystemRoot%\System32\findstr.exe /V "2.16 2.17 2.18" >>%temp%\es_vul_log4.log
+	ECHO.
+	)
+:: Resetting Errorlevel
+ECHO Process Finished at %TIME%
+VER >NUL
+%SystemRoot%\System32\findstr.exe /ic:"log4" %temp%\es_vul_log4.log >NUL
+IF %ERRORLEVEL% == 1 GOTO ERROCHK
+ECHO Vulnerable Library Found:
+TYPE %temp%\es_vul_log4.log
+ECHO.
+SET _exitcode=1
+:ERRORCHK
+VER >NUL
+%SystemRoot%\System32\findstr.exe /ic:"error" %temp%\es_log4jerr.log >NUL
+IF %ERRORLEVEL% == 1 EXIT /B %_exitcode%
+ECHO ERROR Executing PowerShell Script:
+TYPE %temp%\es_log4jerr.log
+DEL %temp%\es_log4jerr.log >NUL 2>NUL
+DEL %temp%\es_vul_log4.log >NUL 2>NUL
+EXIT /B 1
