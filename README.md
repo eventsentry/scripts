@@ -11,6 +11,8 @@ Attempts to shut down the remote host when given the additional "shutdown" comma
 
 [disable_insecure_ciphers.ps1](disable_insecure_ciphers.ps1) Powershell script to disable insecure ciphers on Windows Server and Desktop. Info: [Validation Script](https://www.eventsentry.com/validationscripts/guid/78fcd8a8-18af-49f4-8a64-bccb901e5557)
 
+[Log4J-Vuln-Scanner.cmd](Log4J-Vuln-Scanner.cmd) Windows Batch + Powershell script to search for Log4J libraries and check if they contain vulnerable class to CVE-2021-44228/CVE-2021-45046 [Validation Script](https://www.eventsentry.com/validationscripts/guid/a01ac7ca-b4f4-44e2-badd-dd7eb11e765d)
+
 [noaccfiles.ps1](noaccfiles.ps1) PowerShell script that outputs files not accessed or modified in a certain number days. Used in KB 454 "How can I list files that weren't modified in the last X days?" [KB-454](https://www.eventsentry.com/kb/454)
 
 [powershell-logging.reg](powershell-logging.reg) Registry file to enable PowerShell logging for validation script "PowerShell: Logging should be enabled". For more information read this [EventSentry Blog Post](https://www.eventsentry.com/blog/2018/01/powershell-p0wrh11-securing-powershell.html#:%7E:text=Enabling%20Logging)
