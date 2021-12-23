@@ -12,8 +12,9 @@ for /F "skip=1" %%C in ('%SystemRoot%\System32\wbem\wmic logicaldisk where drive
     )
 :: Resetting Errorlevel
 ECHO Scanner Finished at %TIME%.
+ECHO.
 VER >NUL
-%SystemRoot%\System32\findstr.exe /ic:"log4" %temp%\es_vul_log4.log
+%SystemRoot%\System32\findstr.exe /ic:"log4" %temp%\es_vul_log4.log >NUL
 IF %ERRORLEVEL% == 1 GOTO ERRORCHK
 ECHO Vulnerable Library Found:
 TYPE %temp%\es_vul_log4.log
@@ -21,7 +22,7 @@ ECHO.
 SET _exitcode=1
 :ERRORCHK
 VER >NUL
-%SystemRoot%\System32\findstr.exe /ic:"error" %temp%\es_log4jerr.log
+%SystemRoot%\System32\findstr.exe /ic:"error" %temp%\es_log4jerr.log >NUL
 IF %ERRORLEVEL% == 1 EXIT /B %_exitcode%
 ECHO ERROR Executing PowerShell Script:
 TYPE %temp%\es_log4jerr.log
