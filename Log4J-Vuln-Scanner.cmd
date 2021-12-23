@@ -14,7 +14,7 @@ for /F "skip=1" %%C in ('%SystemRoot%\System32\wbem\wmic logicaldisk where drive
 ECHO Scanner Finished at %TIME%.
 VER >NUL
 %SystemRoot%\System32\findstr.exe /ic:"log4" %temp%\es_vul_log4.log
-IF %ERRORLEVEL% == 1 GOTO ERROCHK
+IF %ERRORLEVEL% == 1 GOTO ERRORCHK
 ECHO Vulnerable Library Found:
 TYPE %temp%\es_vul_log4.log
 ECHO.
