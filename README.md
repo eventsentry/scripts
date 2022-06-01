@@ -13,6 +13,8 @@ Attempts to shut down the remote host when given the additional "shutdown" comma
 
 [Log4J-Vuln-Scanner.cmd](Log4J-Vuln-Scanner.cmd) Windows Batch + Powershell script to search for Log4J libraries and check if they contain vulnerable class to CVE-2021-44228/CVE-2021-45046 [Validation Script](https://www.eventsentry.com/validationscripts/guid/a01ac7ca-b4f4-44e2-badd-dd7eb11e765d)
 
+[msdiagtool-CVE-2022-30190.cmd](msdiagtool-CVE-2022-30190.cmd) Microsoft Recommended workaroud for CVE-2022-30190 [Validation Script](https://www.eventsentry.com/validationscripts/guid/6644dbf9-c673-4ab9-8c1d-6781bac0659d)
+
 [noaccfiles.ps1](noaccfiles.ps1) PowerShell script that outputs files not accessed or modified in a certain number days. Used in KB 454 "How can I list files that weren't modified in the last X days?" [KB-454](https://www.eventsentry.com/kb/454)
 
 [powershell-logging.reg](powershell-logging.reg) Registry file to enable PowerShell logging for validation script "PowerShell: Logging should be enabled". For more information read this [EventSentry Blog Post](https://www.eventsentry.com/blog/2018/01/powershell-p0wrh11-securing-powershell.html#:%7E:text=Enabling%20Logging)
