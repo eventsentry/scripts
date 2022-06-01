@@ -13,7 +13,7 @@ Attempts to shut down the remote host when given the additional "shutdown" comma
 
 [Log4J-Vuln-Scanner.cmd](Log4J-Vuln-Scanner.cmd) Windows Batch + Powershell script to search for Log4J libraries and check if they contain vulnerable class to CVE-2021-44228/CVE-2021-45046 [Validation Script](https://www.eventsentry.com/validationscripts/guid/a01ac7ca-b4f4-44e2-badd-dd7eb11e765d)
 
-[msdiagtool-CVE-2022-30190.cmd](msdiagtool-CVE-2022-30190.cmd) Microsoft Recommended workaroud for CVE-2022-30190 [Validation Script](https://www.eventsentry.com/validationscripts/guid/6644dbf9-c673-4ab9-8c1d-6781bac0659d) [MS CVE-2022-30190](https://msrc-blog.microsoft.com/2022/05/30/guidance-for-cve-2022-30190-microsoft-support-diagnostic-tool-vulnerability/)
+[msdiagtool-CVE-2022-30190.cmd](msdiagtool-CVE-2022-30190.cmd) Microsoft Recommended workaroud for CVE-2022-30190 [Validation Script](https://www.eventsentry.com/validationscripts/guid/6644dbf9-c673-4ab9-8c1d-6781bac0659d) - [MS CVE-2022-30190](https://msrc-blog.microsoft.com/2022/05/30/guidance-for-cve-2022-30190-microsoft-support-diagnostic-tool-vulnerability/)
 
 [noaccfiles.ps1](noaccfiles.ps1) PowerShell script that outputs files not accessed or modified in a certain number days. Used in KB 454 "How can I list files that weren't modified in the last X days?" [KB-454](https://www.eventsentry.com/kb/454)
 
