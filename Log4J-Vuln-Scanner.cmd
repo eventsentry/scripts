@@ -24,7 +24,7 @@ SET _exitcode=1
 VER >NUL
 %SystemRoot%\System32\findstr.exe /ic:"error" %temp%\es_log4jerr.log >NUL
 IF %ERRORLEVEL% == 1 EXIT /B %_exitcode%
-ECHO ERROR Executing PowerShell Script [Most Likely Access Denied to particular system folder but mnost folder were processed]:
+ECHO ERROR Executing PowerShell Script [Most Likely Access Denied to particular system folder but most folder were processed]:
 TYPE %temp%\es_log4jerr.log
 DEL %temp%\es_log4jerr.log >NUL 2>NUL
 DEL %temp%\es_vul_log4.log >NUL 2>NUL
