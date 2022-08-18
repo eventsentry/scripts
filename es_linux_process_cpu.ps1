@@ -11,10 +11,10 @@ If ($args.Length -le 0)
 $pathToPlink = "c:\tools\ssh\plink.exe"
 
 # User for SSH login
-$sshUser = "ingmar"
+$sshUser = "sshUser"
 
-# Path to SSH public key cert, user/pass auth can be used an alternative
-$sshPathToCert = "C:\tools\ssh\gentoo"
+# Path to SSH public key cert, user/pass auth can be used an alternative, can also be customized to use cmd arg
+$sshPathToCert = "C:\tools\ssh\sshCert"
 
 $procInstance = @{}
 
