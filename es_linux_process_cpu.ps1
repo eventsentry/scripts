@@ -46,26 +46,32 @@ ForEach ($line in $lines)
         $cpuUsage = $tokens[1]
         $processName = $tokens[2]
         
-        $processName = $processName.TrimEnd(":")
-        $processName = $processName.TrimEnd(")")
-        $processName = $processName.TrimStart("-")
-        $processName = $processName.TrimStart("(")
-        
-        $processNameOutput = $processName
-        
-        If ($procInstance[$processName] -gt 0)
-        { 
-            $processNameOutput += "#"
-            $processNameOutput += $procInstance[$processName] 
+        try
+        {
+            $cpuValues += [Math]::Round($cpuUsage)
+            
+            $processName = $processName.TrimEnd(":")
+            $processName = $processName.TrimEnd(")")
+            $processName = $processName.TrimStart("-")
+            $processName = $processName.TrimStart("(")
+            
+            $processNameOutput = $processName
+            
+            If ($procInstance[$processName] -gt 0)
+            { 
+                $processNameOutput += "#"
+                $processNameOutput += $procInstance[$processName] 
+            }
+            
+            $processes += $processNameOutput            
+                    
+            If ($procInstance[$processName] -eq '')
+                { $procInstance[$processName] = 1 }
+            Else
+                { $procInstance[$processName]++ }
         }
-        
-        $processes += $processNameOutput
-        $cpuValues += [Math]::Round($cpuUsage)
-                
-        If ($procInstance[$processName] -eq '')
-            { $procInstance[$processName] = 1 }
-        Else
-            { $procInstance[$processName]++ }
+        catch {
+        }
     }
 }
 
