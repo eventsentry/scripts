@@ -75,13 +75,5 @@ ForEach ($line in $lines)
     }
 }
 
-ForEach ($x in $processes)
-{
-	Write-host "$x," -NoNewLine
-}
-Write-host ""
-
-ForEach ($x in $cpuValues)
-{
-	Write-host "$x," -NoNewLine
-}
+$processes -join ","
+$cpuValues -join ","
