@@ -1,5 +1,5 @@
 # Scripts
-A collection of scripts that extend EventSentry's functionality. For more information: [EventSentry Validation Scripts](https://www.eventsentry.com/validationscripts))
+A collection of scripts that extend EventSentry's functionality. For more information: [EventSentry Validation Scripts](https://www.eventsentry.com/validationscripts)
 
 
 ## Scripts descriptions
