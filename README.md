@@ -1,5 +1,6 @@
 # Scripts
-A collection of scripts that extend EventSentry's functionality.
+A collection of scripts that extend EventSentry's functionality. For more information: [EventSentry Validation Scripts](https://www.eventsentry.com/validationscripts))
+
 
 ## Scripts descriptions
 [antiransom_shutdown.vbs](antiransom_shutdown.vbs): This script, given a user name as a command line argument,  utilizes the "net session" command to find the host with the most recent file access activity associated with the given user name.
