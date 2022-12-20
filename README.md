@@ -25,3 +25,6 @@ Attempts to shut down the remote host when given the additional "shutdown" comma
 [removable_audit_set.cmd](removable_audit_set.cmd) This script will help to set the correct registry key to enable Removable Storage Audit. See [KB-410](https://www.eventsentry.com/kb/410)
 
 [crypto_to_usd.ps1](crypto_to_usd.ps1) Outputs the current USD value of a crypto coin, can be integrated with EventSentry's performance monitoring to support charting and alerts. Simply pass the symbol name (e.g. BTC) as an argument.
+
+[stix.vbs](stix.vbs) Transforms STIX file into EventSentry's threat intel format.
+
