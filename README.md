@@ -18,7 +18,7 @@ Attempts to shut down the remote host when given the additional "shutdown" comma
 
 [noaccfiles.ps1](noaccfiles.ps1) PowerShell script that outputs files not accessed or modified in a certain number days. Used in KB 454 "How can I list files that weren't modified in the last X days?" [KB-454](https://www.eventsentry.com/kb/454)
 
-[postgresql_ram_tunning.ps1](postgresql_ram_tunning.ps1) PowerShell script to print recommended ram settings on key settings for tunning PostgreSQL performance. Script can use the machine ram or user input. For more information check EventSentry KB on [How can I optimize the performance of the built-in EventSentry (PostgreSQL) database?](https://www.eventsentry.com/kb/232-how-can-i-optimize-the-performance-of-the-built-in-eventsentry-postgresql-database)
+[postgresql_ram_tuning.ps1](postgresql_ram_tuning.ps1) PowerShell script to print recommended ram settings on key settings for tunning PostgreSQL performance. Script can use the machine ram or user input. For more information check EventSentry KB on [How can I optimize the performance of the built-in EventSentry (PostgreSQL) database?](https://www.eventsentry.com/kb/232-how-can-i-optimize-the-performance-of-the-built-in-eventsentry-postgresql-database)
 
 [powershell-logging.reg](powershell-logging.reg) Registry file to enable PowerShell logging for validation script "PowerShell: Logging should be enabled". For more information read this [EventSentry Blog Post](https://www.eventsentry.com/blog/2018/01/powershell-p0wrh11-securing-powershell.html#:%7E:text=Enabling%20Logging)
 
