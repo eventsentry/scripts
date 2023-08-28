@@ -1,4 +1,6 @@
-# EventSentry PosgreSQL configuration tunning for better ram usage. V0.1B Project repository found at https://github.com/eventsentry/scripts
+# v0.1B
+# EventSentry PosgreSQL configuration tuning for better RAM usage.
+# Project repository URL: https://github.com/eventsentry/scripts
 
 function Validate-RAM {
     param(
@@ -18,7 +20,7 @@ function Validate-RAM {
 }
 
 # Main script
-$manualInput = Read-Host "Enter RAM amount in MB (or press Enter to use machine's RAM)"
+$manualInput = Read-Host "Enter RAM amount in MB (or press Enter to use installed RAM)"
 
 if ([string]::IsNullOrWhiteSpace($manualInput)) {
     $ram = (Get-WmiObject Win32_ComputerSystem).TotalPhysicalMemory / 1024000
@@ -33,10 +35,10 @@ $workMem = [Math]::Ceiling(($ram * 0.20 / 200) * 0.25)
 $maintenanceWorkMem = [Math]::Ceiling($ram * 0.05)
 $effectiveCacheSize = [Math]::Ceiling(($ram / 2) / 1024)
 
-Write-Host Machine RAM is $ram. Results are rounded up. 
+Write-Host Installed RAM: $ram. Results are rounded up. 
 
-Write-Host "These settings must be updated/added in postgress config file."
-Write-Host "(Default in EventSentry is c:\Program Files\EventSentry\data14\postgresql_eventsentry.conf)"
+Write-Host "These settings must be updated/added in the postgreSQL config file."
+Write-Host "(default location is C:\Program Files\EventSentry\data14\postgresql_eventsentry.conf)"
 Write-Host "shared_buffers: $($sharedBuffers)GB                 # Between 15 and 20 % of total physical ram"
 Write-Host "work_mem: $($workMem)MB                       # Total Ram * 0.25 / max_connection. 200 was used as is the default max_connection"
 Write-Host "Maintenance_work_mem: $($maintenanceWorkMem)MB         # Total Ram * 0.05 - Used for mantenice operations"
