@@ -18,6 +18,8 @@ Attempts to shut down the remote host when given the additional "shutdown" comma
 
 [noaccfiles.ps1](noaccfiles.ps1) PowerShell script that outputs files not accessed or modified in a certain number days. Used in KB 454 "How can I list files that weren't modified in the last X days?" [KB-454](https://www.eventsentry.com/kb/454)
 
+[postgresql_ram_tunning.ps1](postgresql_ram_tunning.ps1) PowerShell script to print recommended ram settings on key settings for tunning PostgreSQL performance. Script can use the machine ram or user input. For more information check EventSentry KB on [How can I optimize the performance of the built-in EventSentry (PostgreSQL) database?](https://www.eventsentry.com/kb/232-how-can-i-optimize-the-performance-of-the-built-in-eventsentry-postgresql-database)
+
 [powershell-logging.reg](powershell-logging.reg) Registry file to enable PowerShell logging for validation script "PowerShell: Logging should be enabled". For more information read this [EventSentry Blog Post](https://www.eventsentry.com/blog/2018/01/powershell-p0wrh11-securing-powershell.html#:%7E:text=Enabling%20Logging)
 
 [SMBv3_compression_set_vul-200313_181916.cmd](SMBv3_compression_set_vul-200313_181916.cmd) CVE advisory [CVE-2020-0796](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-0796) explains a remote code execution vulnerability that exists in the way that the Microsoft Server Message Block 3.1.1 (SMBv3) protocol handles certain requests that affect Windows 10 and Windows Server. This script is intended to quickly patch that vulnerability. Script used in article on how to quickly patch vulnerability using EventSentry [KB-415](https://www.eventsentry.com/kb/415)
