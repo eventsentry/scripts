@@ -39,7 +39,7 @@ Write-Host Installed RAM: $ram. Results are rounded up.
 
 Write-Host "These settings must be updated/added in the postgreSQL config file."
 Write-Host "(default location is C:\Program Files\EventSentry\data14\postgresql_eventsentry.conf)"
-Write-Host "shared_buffers= $($sharedBuffers)GB                 # Between 15 and 20 % of total physical ram"
-Write-Host "work_mem= $($workMem)MB                       # Total Ram * 0.25 / max_connection. 200 was used as is the default max_connection"
-Write-Host "Maintenance_work_mem= $($maintenanceWorkMem)MB         # Total Ram * 0.05 - Used for mantenice operations"
-Write-Host "effective_cache_size= $($effectiveCacheSize)GB           # Max of free ram used for disk cache (50% of total ram)"
+Write-Host "shared_buffers = $($sharedBuffers)GB                 # Between 15 and 20 % of total physical ram"
+Write-Host "work_mem = $($workMem)MB                       # Total Ram * 0.25 / max_connection. 200 was used as is the default max_connection"
+Write-Host "Maintenance_work_mem = $($maintenanceWorkMem)MB         # Total Ram * 0.05 - Used for mantenice operations"
+Write-Host "effective_cache_size = $($effectiveCacheSize)GB           # Max of free ram used for disk cache (50% of total ram)"
