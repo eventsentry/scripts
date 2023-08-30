@@ -34,6 +34,15 @@ $sharedBuffers = [Math]::Ceiling(($ram * 0.20) / 1024)
 $workMem = [Math]::Ceiling(($ram * 0.20 / 200) * 0.25)
 $maintenanceWorkMem = [Math]::Ceiling($ram * 0.05)
 $effectiveCacheSize = [Math]::Ceiling(($ram / 2) / 1024)
+
+
+if ($maintenanceWorkMem -gt 2048) {
+    $maintenanceWorkMem = 2048
+}
+
+# Now $number will be 20 if it was greater than $threshold
+Write-Host "Final value of number: $number"
+
 Write-Host
 Write-Host "Installed RAM: $ram. Results are rounded up."
 Write-Host
