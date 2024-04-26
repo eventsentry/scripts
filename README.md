@@ -3,6 +3,8 @@ A collection of scripts that extend EventSentry's functionality. For more inform
 
 
 ## Scripts descriptions
+[AD-ListUnlockUsers.ps1](AD-ListUnlockUsers.ps1): This script is for listing locked users in your AD (if any) and let you unlock them. Great to have it on hand on any machine of your AD instead to need to log in into your DC and search for the user. RSAT need to be installed (from optional features) or you can run `Get-WindowsCapability -Name RSAT* -Online | Add-WindowsCapability -Online` or `Get-WindowsCapability -Name RSAT* -Online | Where-Object Name -like "*Directory*" | Add-WindowsCapability -Online` for Windows 11
+
 [antiransom_shutdown.vbs](antiransom_shutdown.vbs): This script, given a user name as a command line argument,  utilizes the "net session" command to find the host with the most recent file access activity associated with the given user name.
 Attempts to shut down the remote host when given the additional "shutdown" command line parameter. More information and script used on this [Blog Article](https://www.eventsentry.com/blog/2016/09/defeating-ransomware-with-eventsentry-remediation.html)
 
