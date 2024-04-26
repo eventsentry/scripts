@@ -10,7 +10,7 @@ function Check-ADModule {
     }
 }
 
-# Call the function to check for the module
+# Call the function to check for the module, you can comment the next line if you dont want to check if RSAT is installed each time
 Check-ADModule
 
 # Import the Active Directory module
