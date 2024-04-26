@@ -18,8 +18,8 @@ Import-Module ActiveDirectory
 
 # Function to get locked out users
 function Get-LockedOutUsers {
-    # Search for locked out user accounts
-    $users = Search-ADAccount -LockedOut | Select-Object SamAccountName, Name
+    # Search for locked out user accounts and retrieve relevant properties
+    $users = Search-ADAccount -LockedOut | Get-ADUser -Properties lockoutTime | Select-Object SamAccountName, Name, LockedOut, lockoutTime
     if ($users) {
         return $users
     } else {
@@ -31,14 +31,17 @@ function Get-LockedOutUsers {
 function DisplayAndUnlockUsers {
     $lockedUsers = Get-LockedOutUsers
     if ($lockedUsers -ne $null) {
-        # Display locked users
-        Write-Host "Locked Out Users:"
-        $lockedUsers | Format-Table -Property SamAccountName, Name
+        # Display locked users and lockout time
+        $lockedUsers | ForEach-Object {
+            $lockoutDateTime = [DateTime]::FromFileTime($_.lockoutTime)
+            $lockoutDuration = (Get-Date) - $lockoutDateTime
+            "$($_.Name) has been locked out for $($lockoutDuration.Days) days, $($lockoutDuration.Hours) hours, $($lockoutDuration.Minutes) minutes."
+        }
 
         # Ask if the user wants to unlock an account
         $answer = Read-Host "Do you want to unlock a user? (Y/N)"
         if ($answer -eq "y") {
-            $selectedUser = $lockedUsers | Out-GridView -Title "Select a user from the list to unlock" -PassThru
+            $selectedUser = $lockedUsers | Out-GridView -Title "Select a user to unlock" -PassThru
             if ($selectedUser) {
                 Unlock-User -UserSamAccountName $selectedUser.SamAccountName
             } else {
