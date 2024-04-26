@@ -1,4 +1,18 @@
-# Script to list and unlock (if any locked) users on AD
+# Check if the Active Directory module is available
+function Check-ADModule {
+    if (-not (Get-Module -ListAvailable -Name ActiveDirectory)) {
+        Write-Host "The Active Directory module is not available. Please install the RSAT (Remote Server Administration Tools) for this script to work." -ForegroundColor Red
+        Write-Host "You can install RSAT from the 'Optional Features' settings on Windows 10/11 or download it from Microsoft's official website depending on your Windows version." -ForegroundColor Yellow
+        exit 1
+    } else {
+        # Import the module if available
+        Import-Module ActiveDirectory
+    }
+}
+
+# Call the function to check for the module
+Check-ADModule
+
 # Import the Active Directory module
 Import-Module ActiveDirectory
 
