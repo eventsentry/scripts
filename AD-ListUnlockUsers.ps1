@@ -16,6 +16,19 @@ Check-ADModule
 # Import the Active Directory module
 Import-Module ActiveDirectory
 
+# Function to get domain lockout duration
+function Get-DomainLockoutDuration {
+    $policy = Get-ADDefaultDomainPasswordPolicy
+    if ($policy.LockoutDuration -ne [TimeSpan]::Zero) {
+        $duration = $policy.LockoutDuration.ToString()
+        Write-host ""
+        Write-Host "This Domain lockout duration is set to $duration."
+    } else {
+        Write-host ""
+        Write-Host "Domain lockout policy is set to never automatically unlock locked out accounts."
+    }
+}
+
 # Function to get locked out users
 function Get-LockedOutUsers {
     # Search for locked out user accounts and retrieve relevant properties
@@ -29,6 +42,9 @@ function Get-LockedOutUsers {
 
 # Display all locked out users and ask if a user should be unlocked
 function DisplayAndUnlockUsers {
+    # Display domain lockout duration
+    Write-Host (Get-DomainLockoutDuration)
+
     $lockedUsers = Get-LockedOutUsers
     if ($lockedUsers -ne $null) {
         # Display locked users and lockout time
@@ -39,8 +55,9 @@ function DisplayAndUnlockUsers {
         }
 
         # Ask if the user wants to unlock an account
-        $answer = Read-Host "Do you want to unlock a user? (Y/N)"
-        if ($answer -eq "y") {
+        Write-Host ""
+        $answer = Read-Host "Do you want to unlock a user? (yes/no)"
+        if ($answer -eq "yes") {
             $selectedUser = $lockedUsers | Out-GridView -Title "Select a user to unlock" -PassThru
             if ($selectedUser) {
                 Unlock-User -UserSamAccountName $selectedUser.SamAccountName
