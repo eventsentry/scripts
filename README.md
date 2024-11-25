@@ -10,6 +10,8 @@ Attempts to shut down the remote host when given the additional "shutdown" comma
 
 [block_utilman1.cmd](block_utilman1.cmd)  Windows bath script to perform a number of tasks to alleviate the threat: Block access to the file (this includes delete, rename, and execution); Change the user password; Turn off the computer. Script used for "Detecting and automatically recovering from bypassing Windows logons with utilman.exe" Video demostration [Here](https://www.eventsentry.com/videos/Final.mp4) link article [KB-433](https://www.eventsentry.com/kb/433).
 
+[certificate_check.ps1](certificate_check.ps1) Script to check if specific certificate is installed on local computer. You can edit and add the certificate ThumbPrint. Script will check if that particular certificate is installed on local computer. It also has an option to enable printing all local certificate's ThumbPrint.
+
 [check_last_file_modify.vbs](check_last_file_modify.vbs) Checks when a file was last modified
 
 [disable_insecure_ciphers.ps1](disable_insecure_ciphers.ps1) Powershell script to disable insecure ciphers on Windows Server and Desktop. Info: [Validation Script](https://www.eventsentry.com/validationscripts/guid/78fcd8a8-18af-49f4-8a64-bccb901e5557)
