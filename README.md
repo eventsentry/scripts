@@ -18,7 +18,7 @@ Attempts to shut down the remote host when given the additional "shutdown" comma
 
 [DomainExpirationCheck.ps1](DomainExpirationCheck.ps1) Powershell script to check if domain registration is about to expire (in less than 30 days or less). using WhoIsXMLApi.com / Will exit errorlevel 0 if no expiration or error / Will exit errorlevel 1 if is about to expire / Will exit errorlevel 998 (warning) if there was an error querying the server or there was no expiration day in API reply (domain not fully supported)
 
-[DomainExpirationCheck.ps1](DomainExpirationCheck.ps1) Simple Powershell script that will fix the relationship of the machine with the domain. Often broken by a machine that was inactive for more than 60 days.
+[DomainTrustFix.ps1](DomainTrustFix.ps1) Simple Powershell script that will fix the relationship of the machine with the Active Directory Domain. Often broken by a machine that was inactive for more than 60 days.
 
 [Log4J-Vuln-Scanner.cmd](Log4J-Vuln-Scanner.cmd) Windows Batch + Powershell script to search for Log4J libraries and check if they contain vulnerable class to CVE-2021-44228/CVE-2021-45046 [Validation Script](https://www.eventsentry.com/validationscripts/guid/a01ac7ca-b4f4-44e2-badd-dd7eb11e765d)
 
