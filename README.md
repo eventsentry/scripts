@@ -16,6 +16,9 @@ Attempts to shut down the remote host when given the additional "shutdown" comma
 
 [disable_insecure_ciphers.ps1](disable_insecure_ciphers.ps1) Powershell script to disable insecure ciphers on Windows Server and Desktop. Info: [Validation Script](https://www.eventsentry.com/validationscripts/guid/78fcd8a8-18af-49f4-8a64-bccb901e5557)
 
+[es_linux_process_cpu.ps1](es_linux_process_cpu.ps1) This script can easily be integrated with EventSentry's performance monitoring functionality (option "executable") See KB 473 for more information There is a signed version of this script [es_linux_process_cpu_signed.ps1](es_linux_process_cpu_signed.ps1) in case you generate a user with the same username and put the tools in the same folder (no need to edit the script) and you can run this script under secure environments where the script must be signed.
+
+
 [DomainExpirationCheck.ps1](DomainExpirationCheck.ps1) Powershell script to check if domain registration is about to expire (in less than 30 days or less). using WhoIsXMLApi.com / Will exit errorlevel 0 if no expiration or error / Will exit errorlevel 1 if is about to expire / Will exit errorlevel 998 (warning) if there was an error querying the server or there was no expiration day in API reply (domain not fully supported)
 
 [DomainTrustFix.ps1](DomainTrustFix.ps1) Simple Powershell script that will fix the relationship of the machine with the Active Directory Domain. Often broken by a machine that was inactive for more than 60 days.
