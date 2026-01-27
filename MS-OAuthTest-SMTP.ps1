@@ -1,10 +1,10 @@
 <#
 .SYNOPSIS
-    POwershell script to send SMTP emails using MS OAuth (o365/Azure/Exchange Online)
+    Powershell script to send SMTP emails using MS OAuth (o365/Azure/Exchange Online)
 
 .DESCRIPTION
-    This script will obtain the token based and then use it to send a test email. Usefull when dealing with an app with OAuth does not work, to actually
-    check if credentials and email address works
+    This script obtains an OAuth access token using client credentials and sends a test email via SMTP. Useful for troubleshooting OAuth configuration
+    issues by validating that the Tenant ID, Client ID, Client Secret, and sender email address are working correctly outside of the application.
 
 .PARAMETER TenantId
     The Azure AD Tenant ID.
@@ -94,4 +94,5 @@ Send-Command "."
 Send-Command "QUIT"
 
 $tcpClient.Close()
+
 Write-Host "Done!" -ForegroundColor Green
