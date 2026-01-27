@@ -27,7 +27,7 @@ Attempts to shut down the remote host when given the additional "shutdown" comma
 
 [msdiagtool-CVE-2022-30190.cmd](msdiagtool-CVE-2022-30190.cmd) Microsoft Recommended workaroud for CVE-2022-30190 [Validation Script](https://www.eventsentry.com/validationscripts/guid/6644dbf9-c673-4ab9-8c1d-6781bac0659d) - [MS CVE-2022-30190](https://msrc-blog.microsoft.com/2022/05/30/guidance-for-cve-2022-30190-microsoft-support-diagnostic-tool-vulnerability/)
 
-[MS-OAuthTest-SMTP.ps1](MS-OAuthTest-SMTP.ps1) Powershell script to send SMTP emails using MS OAuth (o365/Azure/Exchange Online). This script obtains an OAuth access token using client credentials and sends a test email via SMTP. Useful for troubleshooting OAuth configuration issues by validating that the Tenant ID, Client ID, Client Secret, and sender email address are working correctly outside of the application.
+[MS-OAuthTest-SMTP-AppAuth.ps1](MS-OAuthTest-SMTP-AppAuth.ps1) Powershell script to send SMTP emails using MS OAuth (o365/Azure/Exchange Online). This script obtains an OAuth access token using client credentials and sends a test email via SMTP. Useful for troubleshooting OAuth configuration issues by validating that the Tenant ID, Client ID, Client Secret, and sender email address are working correctly outside of the application.
 
 [noaccfiles.ps1](noaccfiles.ps1) PowerShell script that outputs files not accessed or modified in a certain number days. Used in KB 454 "How can I list files that weren't modified in the last X days?" [KB-454](https://www.eventsentry.com/kb/454)
 
