@@ -29,6 +29,8 @@ Attempts to shut down the remote host when given the additional "shutdown" comma
 
 [MS-OAuthTest-SMTP-AppAuth.ps1](MS-OAuthTest-SMTP-AppAuth.ps1) Powershell script to send SMTP emails using MS OAuth (o365/Azure/Exchange Online). This script obtains an OAuth access token using client credentials and sends a test email via SMTP. Useful for troubleshooting OAuth configuration issues by validating that the Tenant ID, Client ID, Client Secret, and sender email address are working correctly outside of the application.
 
+[MS-OAuthTest-SMTP-UserAuth.ps1](MS-OAuthTest-SMTP-UserAuth.ps1) Powershell script to send SMTP emails using MS OAuth (o365/Azure/Exchange Online). This script obtains an OAuth access token using client credentials and sends a test email via SMTP. Useful for troubleshooting OAuth configuration issues by validating that the Tenant ID, Client ID, Client Secret, and sender email address are working correctly outside of the application. This version uses User Auth instead of APP, needed in some app aproachs. 
+
 [noaccfiles.ps1](noaccfiles.ps1) PowerShell script that outputs files not accessed or modified in a certain number days. Used in KB 454 "How can I list files that weren't modified in the last X days?" [KB-454](https://www.eventsentry.com/kb/454)
 
 [postgresql_ram_tuning.ps1](postgresql_ram_tuning.ps1) PowerShell script to print recommended ram settings on key settings for tunning PostgreSQL performance. Script can use the machine ram or user input. For more information check EventSentry KB on [How can I optimize the performance of the built-in EventSentry (PostgreSQL) database?](https://www.eventsentry.com/kb/232-how-can-i-optimize-the-performance-of-the-built-in-eventsentry-postgresql-database)
