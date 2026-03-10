@@ -14,6 +14,8 @@ Attempts to shut down the remote host when given the additional "shutdown" comma
 
 [certificate_check.ps1](certificate_check.ps1) Script to check if specific certificate is installed on local computer. You can edit and add the certificate ThumbPrint. Script will check if that particular certificate is installed on local computer. It also has an option to enable printing all local certificate's ThumbPrint.
 
+[crypto_to_usd.ps1](crypto_to_usd.ps1) Outputs the current USD value of a crypto coin, can be integrated with EventSentry's performance monitoring to support charting and alerts. Simply pass the symbol name (e.g. BTC) as an argument.
+
 [check_last_file_modify.vbs](check_last_file_modify.vbs) Checks when a file was last modified
 
 [disable_insecure_ciphers.ps1](disable_insecure_ciphers.ps1) Powershell script to disable insecure ciphers on Windows Server and Desktop. Info: [Validation Script](https://www.eventsentry.com/validationscripts/guid/78fcd8a8-18af-49f4-8a64-bccb901e5557)
@@ -46,10 +48,10 @@ Attempts to shut down the remote host when given the additional "shutdown" comma
 
 [Test-TLSVersion.ps1](Test-TLSVersion.ps1) Easy script to check the minium version of TLS on specific host/ip and port. Related KB Article: [KB-513](https://www.eventsentry.com/kb/513)
 
-
 [removable_audit_set.cmd](removable_audit_set.cmd) This script will help to set the correct registry key to enable Removable Storage Audit. See [KB-410](https://www.eventsentry.com/kb/410)
 
-[crypto_to_usd.ps1](crypto_to_usd.ps1) Outputs the current USD value of a crypto coin, can be integrated with EventSentry's performance monitoring to support charting and alerts. Simply pass the symbol name (e.g. BTC) as an argument.
+[UnlockUser.ps1](UnlockUser.ps1) Simple powershell script to unlock domain user that is locked, and will check if you have RSAT installed or ask to install and then will connect to your DC (Ip need to be edited at the script) and ask for your credentials and the user that you want to unlock. You dont need to be part of the domain, just direct network access to the DC. 
+
 
 [stix.vbs](stix.vbs) Transforms STIX file into EventSentry's threat intel format.
 
