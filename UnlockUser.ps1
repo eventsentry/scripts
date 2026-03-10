@@ -25,7 +25,7 @@ if (-not (Get-Module -ListAvailable -Name ActiveDirectory)) {
 $Cred = Get-Credential -Message "Enter domain admin credentials (DOMAIN\username)"
 
 # DC hostname or IP
-$DC = "172.21.2.60"
+$DC = "192.168.1.20"
 
 # Prompt for the locked-out username
 $Username = Read-Host "Enter the username to unlock"
@@ -38,4 +38,5 @@ if ($User.LockedOut) {
     Write-Host "[$Username] has been unlocked." -ForegroundColor Green
 } else {
     Write-Host "[$Username] is NOT currently locked out." -ForegroundColor Yellow
+
 }
