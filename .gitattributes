@@ -1,1 +1,4 @@
 *.vbs linguist-detectable=false
+
+# Preserve Authenticode signatures by preventing line-ending conversion.
+*.ps1 -text
